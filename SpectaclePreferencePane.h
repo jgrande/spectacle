@@ -47,6 +47,8 @@
     IBOutlet SpectacleHotKeyRecorder *myMoveToRightDisplayHotKeyRecorder;
     IBOutlet SpectacleHotKeyRecorder *myMoveToTopDisplayHotKeyRecorder;
     IBOutlet SpectacleHotKeyRecorder *myMoveToBottomDisplayHotKeyRecorder;
+    IBOutlet SpectacleHotKeyRecorder *myMoveToNextSpaceHotKeyRecorder;
+    IBOutlet SpectacleHotKeyRecorder *myMoveToPreviousSpaceHotKeyRecorder;
     IBOutlet SpectacleHotKeyRecorder *myUndoLastMoveHotKeyRecorder;
     IBOutlet SpectacleHotKeyRecorder *myRedoLastMoveHotKeyRecorder;
 }

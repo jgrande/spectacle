@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
 		<string key="IBDocument.SystemVersion">10F569</string>
-		<string key="IBDocument.InterfaceBuilderVersion">788</string>
+		<string key="IBDocument.InterfaceBuilderVersion">804</string>
 		<string key="IBDocument.AppKitVersion">1038.29</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">788</string>
+			<string key="NS.object.0">804</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<integer value="6"/>
@@ -16,7 +16,10 @@
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 		</array>
-		<dictionary class="NSMutableDictionary" key="IBDocument.Metadata"/>
+		<object class="NSMutableDictionary" key="IBDocument.Metadata">
+			<string key="NS.key.0">PluginDependencyRecalculationVersion</string>
+			<integer value="1" key="NS.object.0"/>
+		</object>
 		<array class="NSMutableArray" key="IBDocument.RootObjects" id="409411428">
 			<object class="NSCustomObject" id="294453543">
 				<string key="NSClassName">SpectaclePreferencePane</string>
@@ -370,7 +373,7 @@
 											<object class="NSTextField" id="161834297">
 												<reference key="NSNextResponder" ref="131596099"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{312, 199}, {130, 17}}</string>
+												<string key="NSFrame">{{312, 119}, {130, 17}}</string>
 												<reference key="NSSuperview" ref="131596099"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="938560106">
@@ -386,14 +389,14 @@
 											<object class="NSCustomView" id="18761435">
 												<reference key="NSNextResponder" ref="131596099"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{447, 197}, {140, 21}}</string>
+												<string key="NSFrame">{{447, 117}, {140, 21}}</string>
 												<reference key="NSSuperview" ref="131596099"/>
 												<string key="NSClassName">SpectacleHotKeyRecorder</string>
 											</object>
 											<object class="NSTextField" id="773783822">
 												<reference key="NSNextResponder" ref="131596099"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{312, 170}, {130, 17}}</string>
+												<string key="NSFrame">{{312, 90}, {130, 17}}</string>
 												<reference key="NSSuperview" ref="131596099"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="31504468">
@@ -409,7 +412,7 @@
 											<object class="NSCustomView" id="984145013">
 												<reference key="NSNextResponder" ref="131596099"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{447, 168}, {140, 21}}</string>
+												<string key="NSFrame">{{447, 88}, {140, 21}}</string>
 												<reference key="NSSuperview" ref="131596099"/>
 												<string key="NSClassName">SpectacleHotKeyRecorder</string>
 											</object>
@@ -596,6 +599,52 @@
 													<reference key="NSBackgroundColor" ref="296516534"/>
 													<reference key="NSTextColor" ref="953564374"/>
 												</object>
+											</object>
+											<object class="NSTextField" id="535522506">
+												<reference key="NSNextResponder" ref="131596099"/>
+												<int key="NSvFlags">268</int>
+												<string key="NSFrame">{{312, 199}, {130, 17}}</string>
+												<reference key="NSSuperview" ref="131596099"/>
+												<bool key="NSEnabled">YES</bool>
+												<object class="NSTextFieldCell" key="NSCell" id="772792799">
+													<int key="NSCellFlags">68288064</int>
+													<int key="NSCellFlags2">71304192</int>
+													<string key="NSContents">Next Space:</string>
+													<reference key="NSSupport" ref="558112443"/>
+													<reference key="NSControlView" ref="535522506"/>
+													<reference key="NSBackgroundColor" ref="296516534"/>
+													<reference key="NSTextColor" ref="953564374"/>
+												</object>
+											</object>
+											<object class="NSCustomView" id="588348978">
+												<reference key="NSNextResponder" ref="131596099"/>
+												<int key="NSvFlags">268</int>
+												<string key="NSFrame">{{447, 197}, {140, 21}}</string>
+												<reference key="NSSuperview" ref="131596099"/>
+												<string key="NSClassName">SpectacleHotKeyRecorder</string>
+											</object>
+											<object class="NSTextField" id="489766453">
+												<reference key="NSNextResponder" ref="131596099"/>
+												<int key="NSvFlags">268</int>
+												<string key="NSFrame">{{312, 170}, {130, 17}}</string>
+												<reference key="NSSuperview" ref="131596099"/>
+												<bool key="NSEnabled">YES</bool>
+												<object class="NSTextFieldCell" key="NSCell" id="711451544">
+													<int key="NSCellFlags">68288064</int>
+													<int key="NSCellFlags2">71304192</int>
+													<string key="NSContents">Previous Space:</string>
+													<reference key="NSSupport" ref="558112443"/>
+													<reference key="NSControlView" ref="489766453"/>
+													<reference key="NSBackgroundColor" ref="296516534"/>
+													<reference key="NSTextColor" ref="953564374"/>
+												</object>
+											</object>
+											<object class="NSCustomView" id="572038085">
+												<reference key="NSNextResponder" ref="131596099"/>
+												<int key="NSvFlags">268</int>
+												<string key="NSFrame">{{447, 168}, {140, 21}}</string>
+												<reference key="NSSuperview" ref="131596099"/>
+												<string key="NSClassName">SpectacleHotKeyRecorder</string>
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 33}, {622, 393}}</string>
@@ -922,6 +971,22 @@
 					</object>
 					<int key="connectionID">302</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">myMoveToNextSpaceHotKeyRecorder</string>
+						<reference key="source" ref="294453543"/>
+						<reference key="destination" ref="588348978"/>
+					</object>
+					<int key="connectionID">309</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">myMoveToPreviousSpaceHotKeyRecorder</string>
+						<reference key="source" ref="294453543"/>
+						<reference key="destination" ref="572038085"/>
+					</object>
+					<int key="connectionID">310</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -1078,6 +1143,10 @@
 							<reference ref="18761435"/>
 							<reference ref="773783822"/>
 							<reference ref="984145013"/>
+							<reference ref="535522506"/>
+							<reference ref="588348978"/>
+							<reference ref="489766453"/>
+							<reference ref="572038085"/>
 						</array>
 						<reference key="parent" ref="563872776"/>
 					</object>
@@ -1495,6 +1564,42 @@
 						<reference key="object" ref="31504468"/>
 						<reference key="parent" ref="773783822"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">303</int>
+						<reference key="object" ref="535522506"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="772792799"/>
+						</array>
+						<reference key="parent" ref="131596099"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">304</int>
+						<reference key="object" ref="588348978"/>
+						<reference key="parent" ref="131596099"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">305</int>
+						<reference key="object" ref="489766453"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="711451544"/>
+						</array>
+						<reference key="parent" ref="131596099"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">306</int>
+						<reference key="object" ref="572038085"/>
+						<reference key="parent" ref="131596099"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">307</int>
+						<reference key="object" ref="711451544"/>
+						<reference key="parent" ref="489766453"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">308</int>
+						<reference key="object" ref="772792799"/>
+						<reference key="parent" ref="535522506"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1581,11 +1686,29 @@
 				<string key="287.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="288.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="294.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<object class="NSAffineTransform" key="294.IBViewBoundsToFrameTransform">
+					<bytes key="NSTransformStruct">P4AAAL+AAABDnAAAwwYAAA</bytes>
+				</object>
 				<string key="295.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<object class="NSAffineTransform" key="295.IBViewBoundsToFrameTransform">
+					<bytes key="NSTransformStruct">AUPfgABC6gAAA</bytes>
+				</object>
 				<string key="296.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="299.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<object class="NSAffineTransform" key="299.IBViewBoundsToFrameTransform">
+					<bytes key="NSTransformStruct">P4AAAL+AAABDnAAAwtIAAA</bytes>
+				</object>
 				<string key="300.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<object class="NSAffineTransform" key="300.IBViewBoundsToFrameTransform">
+					<bytes key="NSTransformStruct">AUPfgABCsAAAA</bytes>
+				</object>
 				<string key="301.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="303.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="304.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="305.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="306.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="307.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="308.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="6.ImportedFromIB2"/>
 			</dictionary>
@@ -1593,7 +1716,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">302</int>
+			<int key="maxID">310</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1654,6 +1777,8 @@
 						<string key="myMoveToLeftHotKeyRecorder">SpectacleHotKeyRecorder</string>
 						<string key="myMoveToLowerLeftHotKeyRecorder">SpectacleHotKeyRecorder</string>
 						<string key="myMoveToLowerRightHotKeyRecorder">SpectacleHotKeyRecorder</string>
+						<string key="myMoveToNextSpaceHotKeyRecorder">SpectacleHotKeyRecorder</string>
+						<string key="myMoveToPreviousSpaceHotKeyRecorder">SpectacleHotKeyRecorder</string>
 						<string key="myMoveToRightDisplayHotKeyRecorder">SpectacleHotKeyRecorder</string>
 						<string key="myMoveToRightHotKeyRecorder">SpectacleHotKeyRecorder</string>
 						<string key="myMoveToTopDisplayHotKeyRecorder">SpectacleHotKeyRecorder</string>
@@ -1706,6 +1831,14 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="myMoveToLowerRightHotKeyRecorder">
 							<string key="name">myMoveToLowerRightHotKeyRecorder</string>
+							<string key="candidateClassName">SpectacleHotKeyRecorder</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="myMoveToNextSpaceHotKeyRecorder">
+							<string key="name">myMoveToNextSpaceHotKeyRecorder</string>
+							<string key="candidateClassName">SpectacleHotKeyRecorder</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="myMoveToPreviousSpaceHotKeyRecorder">
+							<string key="name">myMoveToPreviousSpaceHotKeyRecorder</string>
 							<string key="candidateClassName">SpectacleHotKeyRecorder</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="myMoveToRightDisplayHotKeyRecorder">

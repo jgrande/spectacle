@@ -64,4 +64,8 @@
 
 + (NSInteger)currentWorkspace;
 
+#pragma mark -
+
++ (NSInteger)frontMostWindowNumber;
+
 @end

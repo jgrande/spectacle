@@ -22,6 +22,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Carbon/Carbon.h>
+#import "CGSPrivate.h"
 
 @class SpectacleAccessibilityElement;
 
@@ -56,6 +57,12 @@ typedef enum {
 #pragma mark -
 
 - (void)moveFrontMostWindowWithAction: (SpectacleWindowAction)action;
+
+#pragma mark -
+
+- (void)moveFrontMostWindowToNextSpace;
+
+- (void)moveFrontMostWindowToPreviousSpace;
 
 #pragma mark -
 

@@ -196,6 +196,10 @@
         selector = @selector(moveFrontMostWindowToTopDisplay:);
     } else if ([name isEqualToString: SpectacleWindowActionMoveToBottomDisplay]) {
         selector = @selector(moveFrontMostWindowToBottomDisplay:);
+    } else if ([name isEqualToString: SpectacleWindowActionMoveToNextSpace]) {
+        selector = @selector(moveFrontMostWindowToNextSpace:);
+    } else if ([name isEqualToString: SpectacleWindowActionMoveToPreviousSpace]) {
+        selector = @selector(moveFrontMostWindowToPreviousSpace:);
     } else if ([name isEqualToString: SpectacleWindowActionUndoLastMove]) {
         selector = @selector(undoLastWindowAction:);
     } else if ([name isEqualToString: SpectacleWindowActionRedoLastMove]) {
@@ -228,6 +232,34 @@
     CFRelease(windowDescriptions);
     
     return currentWorkspace;
+}
+
+#pragma mark -
+
++ (NSInteger)frontMostWindowNumber {
+    NSDictionary *activeApplication = [[NSWorkspace sharedWorkspace] activeApplication];
+    UInt32 lowLongOfPSN = [[activeApplication objectForKey: @"NSApplicationProcessSerialNumberLow"] longValue];
+    UInt32 highLongOfPSN = [[activeApplication objectForKey: @"NSApplicationProcessSerialNumberHigh"] longValue];
+    ProcessSerialNumber activeApplicationPSN = {highLongOfPSN, lowLongOfPSN};
+    CFArrayRef windowList = CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly, kCGNullWindowID);
+    ProcessSerialNumber currentPSN = {kNoProcess, kNoProcess};
+    NSNumber *frontMostWindowNumber = nil;
+    
+    for (NSMutableDictionary *window in (NSArray *)windowList) {
+        int pid = [[window objectForKey: (id)kCGWindowOwnerPID] intValue];
+        
+        GetProcessForPID(pid, &currentPSN);
+        
+        if((currentPSN.lowLongOfPSN == activeApplicationPSN.lowLongOfPSN) && (currentPSN.highLongOfPSN == activeApplicationPSN.highLongOfPSN)) {
+            frontMostWindowNumber = [[[window objectForKey: (id)kCGWindowNumber] retain] autorelease];
+            
+            break;
+        }
+    }
+    
+    CFRelease(windowList);
+    
+    return [frontMostWindowNumber integerValue];
 }
 
 @end

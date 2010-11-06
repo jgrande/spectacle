@@ -69,6 +69,8 @@
 #define SpectacleWindowActionMoveToRightDisplay          @"MoveToRightDisplay"
 #define SpectacleWindowActionMoveToTopDisplay            @"MoveToTopDisplay"
 #define SpectacleWindowActionMoveToBottomDisplay         @"MoveToBottomDisplay"
+#define SpectacleWindowActionMoveToNextSpace             @"MoveToNextSpace"
+#define SpectacleWindowActionMoveToPreviousSpace         @"MoveToPreviousSpace"
 
 #define SpectacleWindowActionUndoLastMove                @"UndoLastMove"
 #define SpectacleWindowActionRedoLastMove                @"RedoLastMove"

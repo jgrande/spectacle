@@ -71,6 +71,12 @@
 
 #pragma mark -
 
+- (void)moveFrontMostWindowToNextSpace: (id)sender;
+
+- (void)moveFrontMostWindowToPreviousSpace: (id)sender;
+
+#pragma mark -
+
 - (void)undoLastWindowAction: (id)sender;
 
 - (void)redoLastWindowAction: (id)sender;

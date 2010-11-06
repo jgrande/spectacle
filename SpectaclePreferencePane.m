@@ -89,6 +89,8 @@
                          myMoveToRightDisplayHotKeyRecorder,  SpectacleWindowActionMoveToRightDisplay,
                          myMoveToTopDisplayHotKeyRecorder,    SpectacleWindowActionMoveToTopDisplay,
                          myMoveToBottomDisplayHotKeyRecorder, SpectacleWindowActionMoveToBottomDisplay,
+                         myMoveToNextSpaceHotKeyRecorder,     SpectacleWindowActionMoveToNextSpace,
+                         myMoveToPreviousSpaceHotKeyRecorder, SpectacleWindowActionMoveToPreviousSpace,
                          myUndoLastMoveHotKeyRecorder,        SpectacleWindowActionUndoLastMove,
                          myRedoLastMoveHotKeyRecorder,        SpectacleWindowActionRedoLastMove,
                          nil];

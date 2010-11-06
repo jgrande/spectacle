@@ -97,6 +97,10 @@
 
 - (void)addHistoryItemToRedoHistory: (SpectacleHistoryItem *)historyItem;
 
+#pragma mark -
+
+- (void)moveFrontMostWindowToWorkspace: (NSInteger)workspace;
+
 @end
 
 #pragma mark -
@@ -190,6 +194,16 @@ static SpectacleWindowPositionManager *sharedInstance = nil;
     
     [myFrontMostWindowElement setValue: frontMostWindowRectPositionRef forAttribute: kAXPositionAttribute];
     [myFrontMostWindowElement setValue: frontMostWindowRectWindowSizeRef forAttribute: kAXSizeAttribute];
+}
+
+#pragma mark -
+
+- (void)moveFrontMostWindowToNextSpace {
+    [self moveFrontMostWindowToWorkspace: [SpectacleUtilities currentWorkspace] + 1];
+}
+
+- (void)moveFrontMostWindowToPreviousSpace {
+    [self moveFrontMostWindowToWorkspace: [SpectacleUtilities currentWorkspace] - 1];
 }
 
 #pragma mark -
@@ -458,6 +472,28 @@ static SpectacleWindowPositionManager *sharedInstance = nil;
     }
     
     [CurrentRedoHistory addObject: historyItem];
+}
+
+#pragma mark -
+
+- (void)moveFrontMostWindowToWorkspace: (NSInteger)workspace {
+    CGSConnection connection;
+    CGSWindow frontMostWindow;
+    CGError error;
+    
+    if (workspace < 1) {
+        NSBeep();
+        
+        return;
+    }
+    
+    connection = _CGSDefaultConnection();
+    frontMostWindow = [SpectacleUtilities frontMostWindowNumber];
+    error = CGSMoveWorkspaceWindowList(connection, &frontMostWindow, 1, workspace);
+    
+    if (error != 0) {
+        NSBeep();
+    }
 }
 
 @end

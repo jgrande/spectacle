@@ -183,6 +183,16 @@
 
 #pragma mark -
 
+- (void)moveFrontMostWindowToNextSpace: (id)sender {
+    [myWindowPositionManager moveFrontMostWindowToNextSpace];
+}
+
+- (void)moveFrontMostWindowToPreviousSpace: (id)sender {
+    [myWindowPositionManager moveFrontMostWindowToPreviousSpace];
+}
+
+#pragma mark -
+
 - (void)undoLastWindowAction: (id)sender {
     [myWindowPositionManager undoLastWindowAction];
 }
