@@ -234,12 +234,40 @@
     return currentWorkspace;
 }
 
++ (NSInteger)numberOfWorkspaces {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *preferencesPath = nil;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSInteger numberOfWorkspaces = -1;
+    
+    if ([paths count] > 0) {
+        preferencesPath = [paths objectAtIndex: 0];
+        preferencesPath = [preferencesPath stringByAppendingPathComponent: SpectaclePreferencesDirectory];
+        preferencesPath = [preferencesPath stringByAppendingPathComponent: SpectacleDockPreferencesFile];
+        
+        if ([fileManager fileExistsAtPath: preferencesPath isDirectory: nil]) {
+            NSDictionary *dockPreferences = [NSDictionary dictionaryWithContentsOfFile: preferencesPath];
+            NSNumber *workspacesEnabled = [dockPreferences objectForKey: SpectacleWorkspacesEnabledKey];
+            
+            if ([workspacesEnabled boolValue]) {
+                NSNumber *workspaceRowsAndColumns = [dockPreferences objectForKey: SpectacleWorkspaceRowsKey];
+                
+                numberOfWorkspaces = [workspaceRowsAndColumns integerValue];
+                workspaceRowsAndColumns = [dockPreferences objectForKey: SpectacleWorkspaceColumnsKey];
+                numberOfWorkspaces = numberOfWorkspaces * [workspaceRowsAndColumns integerValue];
+            }
+        }
+    }
+    
+    return numberOfWorkspaces;
+}
+
 #pragma mark -
 
 + (NSInteger)frontMostWindowNumber {
     NSDictionary *activeApplication = [[NSWorkspace sharedWorkspace] activeApplication];
-    UInt32 lowLongOfPSN = [[activeApplication objectForKey: @"NSApplicationProcessSerialNumberLow"] longValue];
-    UInt32 highLongOfPSN = [[activeApplication objectForKey: @"NSApplicationProcessSerialNumberHigh"] longValue];
+    UInt32 lowLongOfPSN = [[activeApplication objectForKey: SpectacleLowProcessSerialNumber] longValue];
+    UInt32 highLongOfPSN = [[activeApplication objectForKey: SpectacleHighProcessSerialNumber] longValue];
     ProcessSerialNumber activeApplicationPSN = {highLongOfPSN, lowLongOfPSN};
     CFArrayRef windowList = CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly, kCGNullWindowID);
     ProcessSerialNumber currentPSN = {kNoProcess, kNoProcess};

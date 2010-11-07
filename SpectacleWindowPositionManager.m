@@ -481,7 +481,7 @@ static SpectacleWindowPositionManager *sharedInstance = nil;
     CGSWindow frontMostWindow;
     CGError error;
     
-    if (workspace < 1) {
+    if ((workspace < 1) || (workspace > [SpectacleUtilities numberOfWorkspaces])) {
         NSBeep();
         
         return;
