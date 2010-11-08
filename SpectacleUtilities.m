@@ -25,6 +25,8 @@
 #import "SpectacleHotKeyAction.h"
 #import "SpectacleConstants.h"
 
+#import "CoreDockPrivate.h"
+
 @interface SpectacleUtilities (SpectacleUtilitiesPrivate)
 
 + (NSString *)versionOfBundle: (NSBundle *)bundle;
@@ -235,27 +237,16 @@
 }
 
 + (NSInteger)numberOfWorkspaces {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *preferencesPath = nil;
-    NSFileManager *fileManager = [NSFileManager defaultManager];
     NSInteger numberOfWorkspaces = -1;
     
-    if ([paths count] > 0) {
-        preferencesPath = [paths objectAtIndex: 0];
-        preferencesPath = [preferencesPath stringByAppendingPathComponent: SpectaclePreferencesDirectory];
-        preferencesPath = [preferencesPath stringByAppendingPathComponent: SpectacleDockPreferencesFile];
+    if (CoreDockGetWorkspacesEnabled()) {
+        int rows = -1;
+        int columns = -1;
         
-        if ([fileManager fileExistsAtPath: preferencesPath isDirectory: nil]) {
-            NSDictionary *dockPreferences = [NSDictionary dictionaryWithContentsOfFile: preferencesPath];
-            NSNumber *workspacesEnabled = [dockPreferences objectForKey: SpectacleWorkspacesEnabledKey];
-            
-            if ([workspacesEnabled boolValue]) {
-                NSNumber *workspaceRowsAndColumns = [dockPreferences objectForKey: SpectacleWorkspaceRowsKey];
-                
-                numberOfWorkspaces = [workspaceRowsAndColumns integerValue];
-                workspaceRowsAndColumns = [dockPreferences objectForKey: SpectacleWorkspaceColumnsKey];
-                numberOfWorkspaces = numberOfWorkspaces * [workspaceRowsAndColumns integerValue];
-            }
+        CoreDockGetWorkspacesCount(&rows, &columns);
+        
+        if ((rows > -1) && (columns > -1)) {
+            numberOfWorkspaces = rows * columns;
         }
     }
     

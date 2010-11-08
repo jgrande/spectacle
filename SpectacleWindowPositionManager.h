@@ -22,7 +22,6 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Carbon/Carbon.h>
-#import "CGSPrivate.h"
 
 @class SpectacleAccessibilityElement;
 

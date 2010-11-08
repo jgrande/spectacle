@@ -132,6 +132,7 @@
 		07E6320F1187A7D100451374 /* SpectacleHotKeyAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectacleHotKeyAction.h; sourceTree = "<group>"; };
 		07E632101187A7D100451374 /* SpectacleHotKeyAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpectacleHotKeyAction.m; sourceTree = "<group>"; };
 		07E632151187AAD800451374 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		07ED6FB31288948E00310E5F /* CoreDockPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDockPrivate.h; sourceTree = "<group>"; };
 		07EE10FD11937F7200D6F536 /* SpectacleHotKeyRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectacleHotKeyRecorder.h; sourceTree = "<group>"; };
 		07EE10FE11937F7200D6F536 /* SpectacleHotKeyRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpectacleHotKeyRecorder.m; sourceTree = "<group>"; };
 		07EE11001193806300D6F536 /* SpectacleHotKeyRecorderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectacleHotKeyRecorderCell.h; sourceTree = "<group>"; };
@@ -406,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				070F085112849424007F20DA /* CGSPrivate.h */,
+				07ED6FB31288948E00310E5F /* CoreDockPrivate.h */,
 				077938E51184FADB0013BC14 /* main.m */,
 				32DBCFA20370C41700C91783 /* Spectacle.pch */,
 				078B0F50118D18CC004EE86C /* SpectacleConstants.h */,

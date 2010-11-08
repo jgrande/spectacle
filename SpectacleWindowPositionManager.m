@@ -25,6 +25,8 @@
 #import "SpectacleHistoryItem.h"
 #import "SpectacleUtilities.h"
 
+#import "CGSPrivate.h"
+
 #define FlipVerticalOriginOfRectInRect(a, b) b.size.height - (a.origin.y + a.size.height) + ([[NSScreen mainScreen] frame].size.height - b.size.height)
 
 #pragma mark -
