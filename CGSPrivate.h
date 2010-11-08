@@ -183,8 +183,8 @@ typedef enum {
 
 typedef struct {
     uint32_t unknown1;
-    CGSTransitionType type;
-    CGSTransitionOption option;
+    CGSTransitionType transition;
+    CGSTransitionOption transitionOption;
     CGSWindow wid;      /* Can be 0 for full-screen. */
     float *backColour;  /* NULL for black, otherwise pointer to 3 float array with RGB value. */
 } CGSTransitionSpec;
@@ -198,7 +198,7 @@ extern CGError CGSReleaseTransition(const CGSConnection cid, int transitionHandl
 extern CGError CGSGetWorkspace(const CGSConnection cid, CGSWorkspace *workspace);
 extern CGError CGSGetWindowWorkspace(const CGSConnection cid, const CGSWindow wid, CGSWorkspace *workspace);
 extern CGError CGSSetWorkspace(const CGSConnection cid, CGSWorkspace workspace);
-extern CGError CGSSetWorkspaceWithTransition(const CGSConnection cid, CGSWorkspace workspace, CGSTransitionType transition, CGSTransitionOption subtype, float time);
+extern CGError CGSSetWorkspaceWithTransition(const CGSConnection cid, CGSWorkspace workspace, CGSTransitionType transition, CGSTransitionOption type, float time);
 
 typedef enum {
     CGSScreenResolutionChangedEvent = 100,
@@ -279,7 +279,7 @@ extern char* CGSCStringValue(CGSValue string);
 #define kCGSDumpKeyInfo 0x8000000e               // .keyinfo.out
 #define kCGSDumpSurfaceInfo 0x80000010           // .sinfo.out
 #define kCGSDumpGLInfo 0x80000013                // .glinfo.out
-#define kCGSDumpShadowInfo 0x80000014            //.shinfo.out
+#define kCGSDumpShadowInfo 0x80000014            // .shinfo.out
 #define kCGSDumpStoragesAndCachesInfo 0x80000015 // .scinfo.out
 #define kCGSDumpWindowPlistInfo 0x80000017       // .winfo.plist
 

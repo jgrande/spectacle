@@ -67,6 +67,13 @@
 
 #pragma mark -
 
+typedef enum {
+    SpectacleWorkspaceDirectionNext,
+    SpectacleWorkspaceDirectionPrevious
+} SpectacleWorkspaceDirection;
+
+#pragma mark -
+
 @interface SpectacleWindowPositionManager (SpectacleWindowPositionManagerPrivate)
 
 - (NSScreen *)screenWithAction: (SpectacleWindowAction)action andRect: (CGRect)rect;
@@ -101,7 +108,7 @@
 
 #pragma mark -
 
-- (void)moveFrontMostWindowToWorkspace: (NSInteger)workspace;
+- (void)moveFrontMostWindowToWorkspaceInDirection: (SpectacleWorkspaceDirection)direction;
 
 @end
 
@@ -201,11 +208,11 @@ static SpectacleWindowPositionManager *sharedInstance = nil;
 #pragma mark -
 
 - (void)moveFrontMostWindowToNextSpace {
-    [self moveFrontMostWindowToWorkspace: [SpectacleUtilities currentWorkspace] + 1];
+    [self moveFrontMostWindowToWorkspaceInDirection: SpectacleWorkspaceDirectionNext];
 }
 
 - (void)moveFrontMostWindowToPreviousSpace {
-    [self moveFrontMostWindowToWorkspace: [SpectacleUtilities currentWorkspace] - 1];
+    [self moveFrontMostWindowToWorkspaceInDirection: SpectacleWorkspaceDirectionPrevious];
 }
 
 #pragma mark -
@@ -478,10 +485,18 @@ static SpectacleWindowPositionManager *sharedInstance = nil;
 
 #pragma mark -
 
-- (void)moveFrontMostWindowToWorkspace: (NSInteger)workspace {
+- (void)moveFrontMostWindowToWorkspaceInDirection: (SpectacleWorkspaceDirection)direction {
+    NSInteger currentWorkspace = [SpectacleUtilities currentWorkspace];
+    NSInteger workspace;
     CGSConnection connection;
     CGSWindow frontMostWindow;
     CGError error;
+    
+    if (direction == SpectacleWorkspaceDirectionNext) {
+        workspace = currentWorkspace + 1;
+    } else {
+        workspace = currentWorkspace - 1;
+    }
     
     if ((workspace < 1) || (workspace > [SpectacleUtilities numberOfWorkspaces])) {
         NSBeep();
@@ -495,6 +510,25 @@ static SpectacleWindowPositionManager *sharedInstance = nil;
     
     if (error != 0) {
         NSBeep();
+    } else {
+        CGSTransitionSpec transitionSpec;
+        int transitionHandle;
+        
+        memset(&transitionSpec, 0, sizeof(transitionSpec));
+        
+        transitionSpec.transition = CGSSlide;
+        transitionSpec.transitionOption = (direction == SpectacleWorkspaceDirectionNext) ? CGSLeft : CGSRight;
+        
+        CGSSetWorkspace(connection, workspace);
+        
+        usleep(1000);
+        
+        CGSNewTransition(connection, &transitionSpec, &transitionHandle);
+        CGSInvokeTransition(connection, transitionHandle, 0.5f);
+        
+        sleep(1);
+        
+        CGSReleaseTransition(connection, transitionHandle);
     }
 }
 
