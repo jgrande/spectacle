@@ -79,12 +79,3 @@
 
 #define SpectacleLowProcessSerialNumber                  @"NSApplicationProcessSerialNumberLow"
 #define SpectacleHighProcessSerialNumber                 @"NSApplicationProcessSerialNumberHigh"
-
-#pragma mark -
-
-#define SpectaclePreferencesDirectory                    @"Preferences"
-#define SpectacleDockPreferencesFile                     @"com.apple.dock.plist"
-
-#define SpectacleWorkspacesEnabledKey                    @"workspaces"
-#define SpectacleWorkspaceRowsKey                        @"workspaces-rows"
-#define SpectacleWorkspaceColumnsKey                     @"workspaces-cols"

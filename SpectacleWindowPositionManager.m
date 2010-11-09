@@ -510,25 +510,6 @@ static SpectacleWindowPositionManager *sharedInstance = nil;
     
     if (error != 0) {
         NSBeep();
-    } else {
-        CGSTransitionSpec transitionSpec;
-        int transitionHandle;
-        
-        memset(&transitionSpec, 0, sizeof(transitionSpec));
-        
-        transitionSpec.transition = CGSSlide;
-        transitionSpec.transitionOption = (direction == SpectacleWorkspaceDirectionNext) ? CGSLeft : CGSRight;
-        
-        CGSSetWorkspace(connection, workspace);
-        
-        usleep(1000);
-        
-        CGSNewTransition(connection, &transitionSpec, &transitionHandle);
-        CGSInvokeTransition(connection, transitionHandle, 0.5f);
-        
-        sleep(1);
-        
-        CGSReleaseTransition(connection, transitionHandle);
     }
 }
 
