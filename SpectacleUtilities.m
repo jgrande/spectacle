@@ -200,6 +200,8 @@
         selector = @selector(undoLastWindowAction:);
     } else if ([name isEqualToString: SpectacleWindowActionRedoLastMove]) {
         selector = @selector(redoLastWindowAction:);
+    } else if ([name isEqualToString: SpectacleWindowActionAlwaysOnTop]) {
+        selector = @selector(keepFrontMostWindowAtTop:);
     }
     
     return [SpectacleHotKeyAction hotKeyActionFromTarget: target selector: selector];

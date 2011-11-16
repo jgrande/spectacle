@@ -63,4 +63,8 @@ typedef enum {
 
 - (void)redoLastWindowAction;
 
+#pragma mark -
+
+- (void)keepFrontMostWindowAtTop;
+
 @end

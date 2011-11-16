@@ -75,4 +75,8 @@
 
 - (void)redoLastWindowAction: (id)sender;
 
+#pragma mark -
+
+- (void)keepFrontMostWindowAtTop: (id)sender;
+
 @end

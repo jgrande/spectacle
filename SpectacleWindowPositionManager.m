@@ -242,6 +242,12 @@ static SpectacleWindowPositionManager *sharedInstance = nil;
 
 #pragma mark -
 
+- (void)keepFrontMostWindowAtTop {
+    NSBeep();
+}
+
+#pragma mark -
+
 - (void)dealloc {
     [myFrontMostWindowElement release];
     [myUndoHistory release];

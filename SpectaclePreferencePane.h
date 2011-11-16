@@ -49,6 +49,7 @@
     IBOutlet SpectacleHotKeyRecorder *myMoveToBottomDisplayHotKeyRecorder;
     IBOutlet SpectacleHotKeyRecorder *myUndoLastMoveHotKeyRecorder;
     IBOutlet SpectacleHotKeyRecorder *myRedoLastMoveHotKeyRecorder;
+    IBOutlet SpectacleHotKeyRecorder *myAlwaysOnTopHotKeyRecorder;
 }
 
 - (void)toggleLoginItem: (id)sender;

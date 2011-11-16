@@ -18,5 +18,6 @@
 	<string>MoveToBottomDisplay</string>
 	<string>UndoLastMove</string>
 	<string>RedoLastMove</string>
+	<string>AlwaysOnTop</string>
 </array>
 </plist>

@@ -73,6 +73,8 @@
 #define SpectacleWindowActionUndoLastMove                @"UndoLastMove"
 #define SpectacleWindowActionRedoLastMove                @"RedoLastMove"
 
+#define SpectacleWindowActionAlwaysOnTop                 @"AlwaysOnTop"
+
 #pragma mark -
 
 #define SpectacleSliderBackgroundImage                   @"SliderBackground"

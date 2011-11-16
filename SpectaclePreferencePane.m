@@ -92,6 +92,7 @@
                          myMoveToBottomDisplayHotKeyRecorder, SpectacleWindowActionMoveToBottomDisplay,
                          myUndoLastMoveHotKeyRecorder,        SpectacleWindowActionUndoLastMove,
                          myRedoLastMoveHotKeyRecorder,        SpectacleWindowActionRedoLastMove,
+                         myAlwaysOnTopHotKeyRecorder,         SpectacleWindowActionAlwaysOnTop,
                          nil];
     
     [myToggleRunningStateSwitch setDelegate: self];
@@ -133,6 +134,8 @@
 #pragma mark -
 
 - (void)hotKeyRecorder: (SpectacleHotKeyRecorder *)hotKeyRecorder didReceiveNewHotKey: (SpectacleHotKey *)hotKey {
+    NSLog(@"Hot key: %@", [NSKeyedArchiver archivedDataWithRootObject: hotKey]);
+    
     @try {
         [myVendedHelperController updateHotKeyWithKeyCode: [hotKey hotKeyCode] modifiers: [hotKey hotKeyModifiers] name: [hotKey hotKeyName]];
     } @catch (NSException *e) {

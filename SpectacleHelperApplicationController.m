@@ -193,6 +193,12 @@
 
 #pragma mark -
 
+- (void)keepFrontMostWindowAtTop: (id)sender {
+    [myWindowPositionManager keepFrontMostWindowAtTop];
+}
+
+#pragma mark -
+
 - (void)applicationWillTerminate: (NSNotification *)notification {
     [[NSDistributedNotificationCenter defaultCenter] postNotificationName: SpectacleHelperDidTerminateNotification
                                                                    object: nil
