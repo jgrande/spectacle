@@ -153,6 +153,7 @@
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2D4DD32C14799B49003E9759 /* SpectacleHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SpectacleHelper.entitlements; sourceTree = "<group>"; };
 		2D65406A1475EAE1000133CA /* ZeroKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZeroKit.xcodeproj; path = Frameworks/ZeroKit/ZeroKit.xcodeproj; sourceTree = "<group>"; };
 		2D65407A1475ECCA000133CA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../../../../../Library/Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		2D65407E1475ECF1000133CA /* ZeroKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZeroKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Spectacle-gfuhcjgbmgbmfqaeerwhcojqjawa/Build/Products/Development/ZeroKit.framework"; sourceTree = "<group>"; };
@@ -361,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				0747DAEF1183AB0400F75DD2 /* Configurations */,
+				2D4DD32D14799B80003E9759 /* Entitlements */,
 				0747DAEE1183AAFE00F75DD2 /* Images */,
 				0747DAED1183AAF600F75DD2 /* Interface Builder */,
 				0747DAEC1183AAEE00F75DD2 /* Localized Strings */,
@@ -412,6 +414,14 @@
 				077938B61184F96A0013BC14 /* SpectacleHelper.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2D4DD32D14799B80003E9759 /* Entitlements */ = {
+			isa = PBXGroup;
+			children = (
+				2D4DD32C14799B49003E9759 /* SpectacleHelper.entitlements */,
+			);
+			name = Entitlements;
 			sourceTree = "<group>";
 		};
 		2D65406B1475EAE1000133CA /* Products */ = {
@@ -669,6 +679,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0779390C1184FBC00013BC14 /* SpectacleHelperDevelopment.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SpectacleHelper.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				VERSION_INFO_FILE = "";
 			};
@@ -678,6 +690,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0779390D1184FBC00013BC14 /* SpectacleHelperRelease.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SpectacleHelper.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				VERSION_INFO_FILE = "";
 			};
